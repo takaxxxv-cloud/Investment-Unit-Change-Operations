@@ -111,7 +111,7 @@ TREE_DATA = {
     },
     "fc_over_100": {
         "type": "question",
-        "text": "【先着：100%超え】変更内容の「方向性」を選択してください",
+        "text": "【先着：100%超え】口数を増加しますか？減少しますか？",
         "choices": [
             {"text": "a. 口数増加", "next": "fc_over_inc"},
             {"text": "b. 口数減少", "next": "fc_over_dec"}
