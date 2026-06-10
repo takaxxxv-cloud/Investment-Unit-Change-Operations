@@ -44,7 +44,7 @@ st.markdown("""
     div.stButton > button {
         background-color: #172237 !important; /* ボタン背景（重厚なネイビー） */
         color: #dfc59f !important; /* 文字色（ゴールド） */
-        border: 1px solid #dfc59f !important; /* ゴールドの繊浅な枠線 */
+        border: 1px solid #dfc59f !important; /* ゴールドの繊細な枠線 */
         border-radius: 4px !important; /* 角丸を少しシャープに */
         padding: 16px 24px !important;
         font-size: 16px !important;
@@ -100,8 +100,8 @@ TREE_DATA = {
         "type": "question",
         "text": "【先着】「応募状況（応募率）」を選択してください",
         "choices": [
-            {"text": "A. 応募率 100% 以内", "next": "fc_under_100"},
-            {"text": "B. 応募率 100% 超え", "next": "fc_over_100"}
+            {"text": "A. 応募率 100% 以内 [枠あり]", "next": "fc_under_100"},
+            {"text": "B. 応募率 100% 超え [満額・キャンセル待ち]", "next": "fc_over_100"}
         ]
     },
     "fc_under_100": {
@@ -111,7 +111,7 @@ TREE_DATA = {
     },
     "fc_over_100": {
         "type": "question",
-        "text": "【先着：100%超え】口数を増加しますか？減少しますか？",
+        "text": "【先着：100%超え】変更内容の「方向性」を選択してください",
         "choices": [
             {"text": "a. 口数増加", "next": "fc_over_inc"},
             {"text": "b. 口数減少", "next": "fc_over_dec"}
@@ -137,7 +137,8 @@ TREE_DATA = {
     "fc_over_dec_agreed": {
         "type": "result",
         "status": "info",
-        "text": "🏛️ 【確定オペレーション】\n\n【Ⅰ】キャンセルを実行し、希望口数を預り口譲渡へ回します。"
+        # 👇 【先着・同意あり減少】のテキストをアップデート
+        "text": "🏛️ 【確定オペレーション】\n\n【Ⅰ】キャンセルを実行し、希望口数を預り口譲渡へ回します。\n\n減らす口数を吉田に報告し、その分の割当を依頼してください。"
     },
     "fc_over_dec_no_agree": {
         "type": "question",
@@ -155,7 +156,6 @@ TREE_DATA = {
     "fc_over_dec_1000": {
         "type": "result",
         "status": "warning",
-        # トリプルクォートと箇条書き（*）を組み合わせて完璧に改行させています
         "text": """👑 **【要確認エスカレーション】**
 
 本案件は大口（1000口以上）かつ同意なしの例外処理となります。
@@ -203,7 +203,8 @@ TREE_DATA = {
     "lot_aft_dec_agreed": {
         "type": "result",
         "status": "info",
-        "text": "🏛️ 【確定オペレーション】\n\n【I】キャンセルを実行し、希望口数を預り口譲渡へ回します。"
+        # 👇 【抽選・同意あり減少】のテキストをアップデート
+        "text": "🏛️ 【確定オペレーション】\n\n【I】キャンセルを実行し、希望口数を預り口譲渡へ回します。\n\n減らす口数を吉田に報告し、その分の割当を依頼してください。"
     },
     "lot_aft_dec_no_agree": {
         "type": "question",
@@ -221,7 +222,6 @@ TREE_DATA = {
     "lot_aft_dec_1000": {
         "type": "result",
         "status": "warning",
-        # トリプルクォートと箇条書き（*）を組み合わせて完璧に改行させています
         "text": """👑 **【要確認エスカレーション】**
 
 本案件は大口（1000口以上）かつ同意なしの例外処理となります。
