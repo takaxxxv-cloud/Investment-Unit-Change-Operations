@@ -100,8 +100,8 @@ TREE_DATA = {
         "type": "question",
         "text": "【先着】「応募状況（応募率）」を選択してください",
         "choices": [
-            {"text": "A. 応募率 100% 以内 [枠あり]", "next": "fc_under_100"},
-            {"text": "B. 応募率 100% 超え [満額・キャンセル待ち]", "next": "fc_over_100"}
+            {"text": "A. 応募率 100% 以内", "next": "fc_under_100"},
+            {"text": "B. 応募率 100% 超え", "next": "fc_over_100"}
         ]
     },
     "fc_under_100": {
