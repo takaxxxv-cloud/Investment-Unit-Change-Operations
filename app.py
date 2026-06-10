@@ -170,8 +170,8 @@ TREE_DATA = {
         "type": "question",
         "text": "【抽選】募集の「フェーズ」を選択してください",
         "choices": [
-            {"text": "A. 募集中 [締切前]", "next": "lot_during_campaign"},
-            {"text": "B. 募集終了後 [抽選前・当選発表後]", "next": "lot_after_campaign"}
+            {"text": "A. 募集中", "next": "lot_during_campaign"},
+            {"text": "B. 募集終了後", "next": "lot_after_campaign"}
         ]
     },
     "lot_during_campaign": {
